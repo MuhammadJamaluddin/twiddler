@@ -15,7 +15,7 @@
         while(index < streams.home.length){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.created_at + ' ' + tweet.message);
           $tweet.appendTo($body);
           index += 1;
         }
@@ -24,7 +24,7 @@
           while(index < streams.home.length) {
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $tweet.text('@' + tweet.user + ': ' + tweet.created_at + ' ' + tweet.message);
             $tweet.prependTo($body);
             index += 1;
           }
