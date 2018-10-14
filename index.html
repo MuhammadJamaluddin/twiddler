@@ -14,24 +14,25 @@
         var index = 0;
         while(index < streams.home.length){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.created_at + ' ' + tweet.message);
-          $tweet.appendTo($body);
+          var $tweet = `<div><strong>@${tweet.user}</strong>: <time>${tweet.created_at}</time><br>${tweet.message}</div>`;
+          $($tweet).appendTo($body);
           index += 1;
         }
 
         $('#newTweets').click(function(event) {
           while(index < streams.home.length) {
             var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.created_at + ' ' + tweet.message);
-            $tweet.prependTo($body);
+            var $tweet = `<div><strong>@${tweet.user}</strong>: <time>${tweet.created_at}</time><br>${tweet.message}</div>`;
+            $($tweet).prependTo($body);
             index += 1;
           }
         });
 
+        $body.on('click', 'strong', function(event) {
+          var clickedUser = $(this).text();
+          $('strong').filter(function() { return $(this).text() !== clickedUser}).parent().hide();
+        });
       });
-
     </script>
   </body>
 </html>
