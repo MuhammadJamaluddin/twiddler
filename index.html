@@ -4,8 +4,10 @@
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
     <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet">
   </head>
   <body>
+    <h1>Twiddler</h1>
     <button id="newTweets">Display new tweets</button>
     <script>
 
@@ -16,7 +18,7 @@
         while(index < streams.home.length){
           var tweet = streams.home[index];
           var $tweet = `<div><strong>@${tweet.user}</strong>: <time>${tweet.created_at}</time><br>${tweet.message}</div>`;
-          $($tweet).appendTo($body);
+          $($tweet).insertAfter('h1');
           index += 1;
         }
 
@@ -24,7 +26,7 @@
           while(index < streams.home.length) {
             var tweet = streams.home[index];
             var $tweet = `<div><strong>@${tweet.user}</strong>: <time>${tweet.created_at}</time><br>${tweet.message}</div>`;
-            $($tweet).prependTo($body);
+            $($tweet).insertAfter('h1');
             index += 1;
           }
         });
