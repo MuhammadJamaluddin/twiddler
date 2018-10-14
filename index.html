@@ -31,6 +31,15 @@
         $body.on('click', 'strong', function(event) {
           var clickedUser = $(this).text();
           $('strong').filter(function() { return $(this).text() !== clickedUser}).parent().hide();
+
+          $body.prepend('<button id="back">Back</button>');
+          $('#newTweets').hide();
+        });
+
+        $body.on('click', '#back', function(event) {
+          $(':hidden').show();
+          $('#newTweets').trigger('click');
+          $('#back').remove();
         });
       });
     </script>
