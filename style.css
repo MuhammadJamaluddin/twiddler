@@ -1,0 +1,49 @@
+
+body {
+	background: rgb(128,177,217);
+	position: relative;
+}
+
+h1 {
+	text-align: center;
+}
+
+div {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 0.5em;
+	padding: 1em;
+	border: 2px solid black;
+	border-radius: 0.4em; 
+	background-color: white; 
+}
+
+strong:hover {
+	color: blue;
+	cursor: pointer;
+}
+
+time {
+	font-size: 0.9em;
+	color: grey;
+}
+
+button {
+	position: absolute;
+	top: 1.7em;
+	left: 1em;
+	font-family: verdana;
+	font-weight: bold;
+	font-size: 1.3em;
+	padding: 0.5em;
+	color: white;
+	background-color: black;
+	border: 2px solid black;
+	outline: none;
+	border-radius: 2em;
+}
+
+button:hover {
+	background-color: white;
+	color: black;
+}
